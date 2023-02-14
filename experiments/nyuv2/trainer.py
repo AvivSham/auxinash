@@ -3,30 +3,29 @@ from argparse import ArgumentParser
 
 import numpy as np
 import torch
+import wandb
 from sklearn.model_selection import train_test_split
-from torch.utils.data import DataLoader, Subset
 from torch.nn.utils.clip_grad import clip_grad_norm_
+from torch.utils.data import DataLoader, Subset
+from tqdm import trange
 
 from experiments.loss_utils import calc_loss
 from experiments.nyuv2.calc_delta import delta_fn
-from tqdm import trange
-import wandb
-
 from experiments.nyuv2.data import NYUv2
+from experiments.nyuv2.models import SegNet
+from experiments.nyuv2.utils import ConfMatrix, depth_error, normal_error
+from experiments.utils import (
+    common_parser,
+    extract_weight_method_parameters_from_args,
+    get_device,
+    set_logger,
+    set_seed,
+    str2bool,
+)
 from implicit_diff.optim import MetaOptimizer
 from methods.auxilearn.hyperstep import auxilearn_hyperstep
 from methods.auxinash.hyperstep import auxinash_hyperstep
 from methods.weight_methods import WeightMethods
-from experiments.utils import (
-    set_seed,
-    set_logger,
-    common_parser,
-    get_device,
-    extract_weight_method_parameters_from_args,
-    str2bool,
-)
-from experiments.nyuv2.models import SegNet
-from experiments.nyuv2.utils import ConfMatrix, depth_error, normal_error
 
 set_logger()
 
@@ -35,7 +34,7 @@ def main(args, device):
     # ----
     # Nets
     # ---
-    model = SegNet(),
+    model = (SegNet(),)
     model = model.to(device)
 
     # dataset and dataloaders

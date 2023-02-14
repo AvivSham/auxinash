@@ -1,6 +1,7 @@
-from abc import abstractmethod, ABC
-from torch import nn
+from abc import ABC, abstractmethod
 from typing import Iterator
+
+from torch import nn
 
 
 class AbstractMTLModel(ABC, nn.Module):

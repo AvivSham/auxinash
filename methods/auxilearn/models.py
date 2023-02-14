@@ -320,7 +320,6 @@ class MonoNonlinearHyperNet(MonoHyperNet):
 
 
 class NoFCCNNHyperNet(HyperNet):
-
     # NYU Input shape is (3, 288, 384)
 
     def __init__(
@@ -424,7 +423,6 @@ class NoFCCNNHyperNet(HyperNet):
 
 
 class MonoNoFCCNNHyperNet(MonoHyperNet):
-
     # NYU Input shape is (3, 288, 384)
 
     def __init__(

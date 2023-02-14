@@ -1,7 +1,7 @@
 import copy
 import random
 from abc import abstractmethod
-from typing import Dict, List, Tuple, Union, Iterable
+from typing import Dict, Iterable, List, Tuple, Union
 
 import cvxpy as cp
 import numpy as np
