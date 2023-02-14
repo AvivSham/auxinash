@@ -1,0 +1,13 @@
+matplotlib>=3.2.1
+numpy>=1.18.2
+torch>=1.4.0
+torchvision>=0.8.0
+tqdm>=4.45.0
+pandas
+scikit-learn
+seaborn
+wandb==0.12.21
+plotly
+# cvxpy -> use conda: conda install -c conda-forge cvxpy
+panoptic_parts
+opencv-python
