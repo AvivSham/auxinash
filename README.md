@@ -1,6 +1,6 @@
 # AuxiNash
 
-Official implementation of _"[Auxiliary Learning as an Bargaining Game](https://arxiv.org/abs/2301.13501)"_.
+Official implementation of _"[Auxiliary Learning as an Asymmetric Bargaining Game](https://arxiv.org/abs/2301.13501)"_.
 
 ![](resource/img.png)
 
