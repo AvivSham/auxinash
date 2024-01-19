@@ -34,7 +34,7 @@ def main(args, device):
     # ----
     # Nets
     # ---
-    model = (SegNet(),)
+    model = SegNet()
     model = model.to(device)
 
     # dataset and dataloaders
